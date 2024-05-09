@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: angular_exemple_1
     volumes:
-      - ./builds/angular_exemple_1:/app/angular_exemple_1/dist/angular_exemple_1/browser
+      - ./builds/angular_exemple_1:/app/dist/angular_exemple_1/browser
     networks:
       - angular-nginx-docker-template
 
@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     container_name: angular_exemple_2
     volumes:
-      - ./builds/angular_exemple_2:/app/angular_exemple_2/dist/angular_exemple_2/browser
+      - ./builds/angular_exemple_2:/app/dist/angular_exemple_2/browser
     networks:
       - angular-nginx-docker-template
 
