@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  angular_exemple_1:
+    build: 
+      context: ./angular_exemple_1
+      dockerfile: Dockerfile
+    container_name: angular_exemple_1
+    volumes:
+      - ./builds/angular_exemple_1:/app/angular_exemple_1/dist/angular_exemple_1/browser
+    networks:
+      - angular-nginx-docker-template
+
+  angular_exemple_2:
+    build: 
+      context: ./angular_exemple_2
+      dockerfile: Dockerfile
+    container_name: angular_exemple_2
+    volumes:
+      - ./builds/angular_exemple_2:/app/angular_exemple_2/dist/angular_exemple_2/browser
+    networks:
+      - angular-nginx-docker-template
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes: 
+      - ./builds:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/mime.types:/etc/nginx/mime.types
+      - ./nginx/http.d:/etc/nginx/conf.d
+      - ./nginx/cert:/etc/nginx/ssl
+    depends_on:
+      - angular_exemple_1
+      - angular_exemple_2
+    networks:
+      - angular-nginx-docker-template
+
+volumes:
+  builds:
+
+networks:
+  angular-nginx-docker-template:
+    driver: bridge
