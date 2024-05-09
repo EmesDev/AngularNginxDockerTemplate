@@ -10,6 +10,6 @@ RUN npm install
 
 COPY . .
 
-RUN ng build --verbose
 
+CMD [ "ng", "build", "--verbose" ]
 # CMD [ "ng", "serve", "--host", "0.0.0.0", "--port", "4200" ]
