@@ -1,22 +1,22 @@
 
 services:
-  angular_exemple_1:
+  angular_example_1:
     build: 
-      context: ./angular_exemple_1
+      context: ./angular_example_1
       dockerfile: Dockerfile
-    container_name: angular_exemple_1
+    container_name: angular_example_1
     volumes:
-      - ./builds/angular_exemple_1:/app/dist/angular_exemple_1/browser
+      - ./builds/angular_example_1:/app/dist/angular_example_1/browser
     networks:
       - angular-nginx-docker-template
 
-  angular_exemple_2:
+  angular_example_2:
     build: 
-      context: ./angular_exemple_2
+      context: ./angular_example_2
       dockerfile: Dockerfile
-    container_name: angular_exemple_2
+    container_name: angular_example_2
     volumes:
-      - ./builds/angular_exemple_2:/app/dist/angular_exemple_2/browser
+      - ./builds/angular_example_2:/app/dist/angular_example_2/browser
     networks:
       - angular-nginx-docker-template
 
@@ -33,8 +33,8 @@ services:
       - ./nginx/http.d:/etc/nginx/conf.d
       - ./nginx/cert:/etc/nginx/ssl
     depends_on:
-      - angular_exemple_1
-      - angular_exemple_2
+      - angular_example_1
+      - angular_example_2
     networks:
       - angular-nginx-docker-template
 
