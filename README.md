@@ -93,7 +93,7 @@ Execute o comando no seu terminal.
 
 
 ```bash
-docker-compose up --detach --services angular_exemple_1 angular_exemple_2
+docker-compose up angular_example_1 angular_example_2
 
 
 ```
@@ -103,7 +103,7 @@ apos o fim do build, vamos iniciar o nginx
 
 
 ```bash
-docker-compose up --detach --services nginx
+docker-compose up nginx
 
 
 ```
