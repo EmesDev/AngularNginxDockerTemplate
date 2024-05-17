@@ -38,8 +38,21 @@ services:
     networks:
       - angular-nginx-docker-template
 
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - angular-nginx-docker-template
+
 volumes:
   builds:
+  portainer_data:
 
 networks:
   angular-nginx-docker-template:
