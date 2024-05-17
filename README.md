@@ -9,6 +9,7 @@ Configuration template project for Angular VPS using Nginx and Docker. Created b
 <img alt="Static Badge" src="https://img.shields.io/badge/Nginx-v1.25.5-blue?style=plastic&logo=nginx&logoColor=%2302f71b&logoSize=auto&labelColor=%23303030">
 <img alt="Static Badge" src="https://img.shields.io/badge/Docker-latest-blue?style=plastic&logo=docker&logoColor=%2300d0ff&logoSize=auto&labelColor=%23303030">
 <img alt="Static Badge" src="https://img.shields.io/badge/NPM-v21-blue?style=plastic&logo=NPM&logoColor=red&logoSize=auto&labelColor=%23303030">
+<img alt="Static Badge" src="https://img.shields.io/badge/Portainer-2.19.5-blue?style=plastic&logo=portainer&logoColor=%2300d0ff&logoSize=auto&labelColor=%23303030">
 
 
 </div>
