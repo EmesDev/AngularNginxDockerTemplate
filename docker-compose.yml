@@ -1,7 +1,6 @@
-
 services:
   angular_example_1:
-    build: 
+    build:
       context: ./angular_example_1
       dockerfile: Dockerfile
     container_name: angular_example_1
@@ -11,7 +10,7 @@ services:
       - angular-nginx-docker-template
 
   angular_example_2:
-    build: 
+    build:
       context: ./angular_example_2
       dockerfile: Dockerfile
     container_name: angular_example_2
@@ -20,12 +19,24 @@ services:
     networks:
       - angular-nginx-docker-template
 
+  grafana:
+    image: grafana/grafana-oss:main
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-clock-panel
+      - GF_LOG_LEVEL=debug
+    ports:
+      - '9100:3000'
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
   nginx:
     image: nginx
     container_name: nginx
     ports:
       - "80:80"
-    volumes: 
+    volumes:
       - ./builds:/usr/share/nginx/html
       - ./nginx/errors:/usr/share/nginx/html/errors
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
@@ -53,6 +64,9 @@ services:
 volumes:
   builds:
   portainer_data:
+  grafana-storage: {}
+
+
 
 networks:
   angular-nginx-docker-template:
