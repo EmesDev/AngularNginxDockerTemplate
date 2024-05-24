@@ -58,6 +58,16 @@ services:
     networks:
       - angular-nginx-docker-template
 
+  grafana:
+    extends:
+      file: /grafana/docker-compose.yml
+      service: grafana
+      depends_on:
+        - nginx
+        - prometheus
+    networks:
+      - angular-nginx-docker-template
+
 volumes:
   builds:
   portainer_data:
