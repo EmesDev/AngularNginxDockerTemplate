@@ -19,18 +19,6 @@ services:
     networks:
       - angular-nginx-docker-template
 
-  grafana:
-    image: grafana/grafana-oss:main
-    container_name: grafana
-    restart: unless-stopped
-    environment:
-      - GF_INSTALL_PLUGINS=grafana-clock-panel
-      - GF_LOG_LEVEL=debug
-    ports:
-      - '9100:3000'
-    volumes:
-      - grafana-storage:/var/lib/grafana
-
   nginx:
     image: nginx
     container_name: nginx
@@ -61,12 +49,18 @@ services:
     networks:
       - angular-nginx-docker-template
 
+  prometheus:
+    extends:
+      file: /prometheus/docker-compose.yml
+      service: prometheus
+      depends_on:
+        - nginx
+    networks:
+      - angular-nginx-docker-template
+
 volumes:
   builds:
   portainer_data:
-  grafana-storage: {}
-
-
 
 networks:
   angular-nginx-docker-template:
