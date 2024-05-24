@@ -15,4 +15,10 @@ scrape_configs:
 
   - job_name: "nginx"
     static_configs:
-      - targets: ["localhost"]
+      - targets: 
+        - "localhost:80"
+
+  - job_name: "grafana"
+    static_configs:
+      - targets: 
+        - "localhost:3000"

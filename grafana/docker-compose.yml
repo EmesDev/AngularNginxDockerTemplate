@@ -1,0 +1,10 @@
+services:
+  grafana:
+    image: grafana/grafana-oss
+    container_name: grafana
+    ports:
+      - "9100:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - angular-nginx-docker-template
