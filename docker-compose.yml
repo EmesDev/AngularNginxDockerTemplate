@@ -60,7 +60,7 @@ services:
 
   grafana:
     extends:
-      file: /grafana/docker-compose.yml
+      file: /external/grafana/docker-compose.yml
       service: grafana
       depends_on:
         - nginx
