@@ -1,0 +1,17 @@
+{
+	"ulid": "01HYWVAJPD32JMMXF8ZKP37RDE",
+	"minTime": 1716567444773,
+	"maxTime": 1716573600000,
+	"stats": {
+		"numSamples": 101963,
+		"numSeries": 1339,
+		"numChunks": 2461
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01HYWVAJPD32JMMXF8ZKP37RDE"
+		]
+	},
+	"version": 1
+}
