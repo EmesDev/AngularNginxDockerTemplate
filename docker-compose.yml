@@ -51,7 +51,7 @@ services:
 
   prometheus:
     extends:
-      file: /prometheus/docker-compose.yml
+      file: /external/prometheus/docker-compose.yml
       service: prometheus
       depends_on:
         - nginx
